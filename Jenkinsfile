@@ -28,12 +28,6 @@ pipeline {
       }
     }
     
-     stage('Results') {
-      steps {
-        hygieiaBuildPublishStep buildStatus: 'Success'
-	      cleanWs()
-      }
-    }
     
   }
 }
