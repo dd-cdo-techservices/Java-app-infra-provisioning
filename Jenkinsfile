@@ -7,8 +7,7 @@ pipeline {
       steps {
         checkout scm
   	    }
-    	}
-    
+    }
     stage('Terraform initialize') {
       steps {
         sh 'terraform init'
@@ -27,6 +26,8 @@ pipeline {
         cleanWs()
       }
     }
+    
+    
     
     
   }
