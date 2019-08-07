@@ -5,7 +5,7 @@ variable "aws_region" {
 
 variable "aws_vpc_cidr" {
   description = "CIDR IP range for VPC"
-  default     = "50.0.0.0/16"
+  default     = "192.168.0.0/16"
 }
 
 variable "aws_az1" {
@@ -20,17 +20,17 @@ variable "aws_az2" {
 
 variable "aws_publicsubnet01" {
   description = "CIDR IP range for public subnet"
-  default     = "50.0.1.0/24"	
+  default     = "192.168.1.0/24"	
 }
 
 variable "aws_privatesubnet01" {
   description = "CIDR IP range for private subnet"
-  default     = "50.0.2.0/24"
+  default     = "192.168.2.0/24"
 }
 
 variable "java_app_server_privateip" {
   description = "Reserved private IP for wordpress server"
-  default     = "50.0.1.10"
+  default     = "192.168.1.10"
 }
 
 variable "appserver_ip" {
@@ -40,7 +40,7 @@ variable "appserver_ip" {
 
 variable "java_db_server_privateip" {
   description = "Reserved private IP for wordpress mysql server"
-  default     = "50.0.2.20"
+  default     = "192.168.2.20"
 }
 
 variable "user_data" {
