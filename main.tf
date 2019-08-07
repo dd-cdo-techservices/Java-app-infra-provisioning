@@ -188,6 +188,7 @@ resource "aws_security_group" "cicd_db_sg" {
 resource "aws_instance" "java_app_server" {
 	ami				= "${data.aws_ami.ubjavaami.id}"
 	instance_type			= "t2.micro"
+	key_name                        = "devopsTestKP"
 	subnet_id 			= "${aws_subnet.uconenetworkpublicsubnet.id}"
 	depends_on			= ["aws_internet_gateway.cicdgw"]
 	vpc_security_group_ids 		= ["${aws_security_group.cicd_sg.id}"]
@@ -210,6 +211,7 @@ resource "aws_eip_association" "eip_assoc_app" {
 resource "aws_instance" "java_mysql_server" {
 	ami				= "${data.aws_ami.ubmysqlami.id}"
 	instance_type			= "t2.micro"
+	key_name                        = "devopsTestKP"
 	subnet_id			= "${aws_subnet.uconenetworkprivatesubnet.id}"
 	vpc_security_group_ids		= ["${aws_security_group.cicd_db_sg.id}"]
 	private_ip			= "${var.java_db_server_privateip}"
